@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
+  basePath: process.env.BASE_PATH || "",
 };
-
 export default nextConfig;
