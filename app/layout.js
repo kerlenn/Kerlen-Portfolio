@@ -1,3 +1,5 @@
+// app/layout.js
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import SiteNavbar from "@/components/SiteNavbar";
