@@ -55,7 +55,6 @@ export default function Page() {
             <div className="hero-actions hero-in d4">
               <a href="#projects" className="hero-btn hero-btn-primary">
                 Explore My Work
-                <span>↗</span>
               </a>
 
               <a href="#contact" className="hero-btn hero-btn-secondary">
@@ -89,11 +88,6 @@ export default function Page() {
                   sizes="(max-width: 768px) 80vw, 40vw"
                 />
               </div>
-            </div>
-
-            <div className="portrait-label">
-              <span className="label-dot" />
-              <span>KERLEN / 01</span>
             </div>
           </div>
         </div>
@@ -154,21 +148,14 @@ export default function Page() {
             <Reveal direction="right" delay={150}>
               <div className="about-card">
 
-                <div className="about-card-grid" />
-
-                <div className="about-card-top">
-                  <span>PROFILE / 01</span>
-                  <span>2026</span>
-                </div>
-
-                <div className="about-symbol">
-                  ✦
+                {/* FOTO PROFIL */}
+                <div className="about-photo">
+                  <img src="/images/gsa.jpg" alt="Kerlen Nina Mae" />
                 </div>
 
                 <div className="about-card-bottom">
-                  <strong>KERLEN NINA MAE</strong>
-                  <span>INFORMATICS ENGINEERING</span>
-                  <span>TARUMANAGARA UNIVERSITY</span>
+                  <strong>GOOGLE STUDENT AMBASSADOR BATCH 2</strong>
+                  <span> 1st October 2026 - 31st Januari 2027 </span>
                 </div>
 
               </div>
@@ -223,7 +210,7 @@ export default function Page() {
             <div className="about-direction">
 
               <div className="direction-number">
-                02
+
               </div>
 
               <div className="direction-content">
@@ -411,14 +398,6 @@ export default function Page() {
                   technology meets design.
                 </p>
 
-                <a
-                  href="kerlenninamae@gmail.com"
-                  className="contact-cta"
-                >
-                  <span>GET IN TOUCH</span>
-                  <span>↗</span>
-                </a>
-
               </div>
 
             </Reveal>
@@ -453,6 +432,26 @@ export default function Page() {
 
               </a>
 
+              <a
+                href="https://wa.me/+62895323484455"
+                className="contact-link"
+              >
+
+                <div>
+                  <span className="contact-link-label">
+                    WHATSAPP
+                  </span>
+
+                  <span className="contact-link-value">
+                    +62 895-3234-84455
+                  </span>
+                </div>
+
+                <span className="contact-link-arrow">
+                  ↗
+                </span>
+
+              </a>
 
               <a
                 href="https://www.instagram.com/kerlen.nina"
@@ -467,7 +466,7 @@ export default function Page() {
                   </span>
 
                   <span className="contact-link-value">
-                    @kerlen.nina
+                      @kerlen.nina
                   </span>
                 </div>
 
@@ -479,22 +478,43 @@ export default function Page() {
 
 
               <a
-                href="#home"
+                href="https://www.linkedin.com/in/kerlennina/"
                 className="contact-link"
               >
 
                 <div>
                   <span className="contact-link-label">
-                    PORTFOLIO
+                    LINKEDIN
                   </span>
 
                   <span className="contact-link-value">
-                    kerlenninamae
+                    kerlennina
                   </span>
                 </div>
 
                 <span className="contact-link-arrow">
-                  ↑
+                  ↗
+                </span>
+
+              </a>
+
+              <a
+                href="https://github.com/kerlenn"
+                className="contact-link"
+              >
+
+                <div>
+                  <span className="contact-link-label">
+                    GITHUB
+                  </span>
+
+                  <span className="contact-link-value">
+                      kerlenn
+                  </span>
+                </div>
+
+                <span className="contact-link-arrow">
+                  ↗
                 </span>
 
               </a>
@@ -519,7 +539,7 @@ export default function Page() {
               </span>
 
               <span>
-                © {new Date().getFullYear()}
+                © {new Date().getFullYear()} 
               </span>
 
             </div>

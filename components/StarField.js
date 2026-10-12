@@ -1,7 +1,8 @@
-// components/StarField.js
+
+ // components/StarField.js
 
 export default function StarField() {
-  const stars = Array.from({ length: 55 }, (_, i) => ({
+  const stars = Array.from({ length: 80 }, (_, i) => ({
     left: `${(i * 37) % 100}%`,
     top: `${(i * 61) % 100}%`,
     size: `${1 + (i % 3) * 0.7}px`,
@@ -10,7 +11,7 @@ export default function StarField() {
   }));
 
   return (
-    <div className="star-field" aria-hidden="true">
+    <div className="global-star-field" aria-hidden="true">
       {stars.map((star, i) => (
         <span
           key={i}
