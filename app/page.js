@@ -5,6 +5,7 @@ import AboutMarquee from "@/components/AboutMarquee";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import StarField from "@/components/StarField";
+import { assetPath } from "@/lib/assetPath";
 import { projects } from "@/data/projects";
 
 const skills = ["Python", "TensorFlow", "PyTorch", "scikit-learn", "Pandas", "SQL", "JavaScript", "Next.js", "Git"];
@@ -81,7 +82,7 @@ export default function Page() {
 
               <div className="portrait-image">
                 <Image
-                  src="/images/kerlennn.jpg"
+                  src={assetPath("/images/kerlennn.jpg")}
                   alt="Kerlen"
                   fill
                   priority
@@ -150,7 +151,10 @@ export default function Page() {
 
                 {/* FOTO PROFIL */}
                 <div className="about-photo">
-                  <img src="/images/gsa.jpg" alt="Kerlen Nina Mae" />
+                  <img
+                    src={assetPath("/images/gsa.jpg")}
+                    alt="Kerlen Nina Mae"
+                  />
                 </div>
 
                 <div className="about-card-bottom">
@@ -466,7 +470,7 @@ export default function Page() {
                   </span>
 
                   <span className="contact-link-value">
-                      @kerlen.nina
+                    @kerlen.nina
                   </span>
                 </div>
 
@@ -509,7 +513,7 @@ export default function Page() {
                   </span>
 
                   <span className="contact-link-value">
-                      kerlenn
+                    kerlenn
                   </span>
                 </div>
 
@@ -539,7 +543,7 @@ export default function Page() {
               </span>
 
               <span>
-                © {new Date().getFullYear()} 
+                © {new Date().getFullYear()}
               </span>
 
             </div>
