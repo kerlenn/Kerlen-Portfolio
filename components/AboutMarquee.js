@@ -1,5 +1,6 @@
+// components/AboutMarquee.js
 
-const basePath = "/Kerlen-Portfolio";
+import { assetPath } from "@/lib/assetPath";
 
 const photos = [
   "1.JPG",
@@ -23,12 +24,44 @@ const photos = [
   "19.jpg",
   "20.jpeg",
 ].map((filename) => ({
-  src: `${basePath}/images/about/${filename}`,
+  src: assetPath(`/images/about/${filename}`),
 }));
 
+function MarqueeRow({ items, offset = 0, reverse = false }) {
+  const loop = [...items, ...items];
+
+  return (
+    <div className="about-marquee-viewport">
+      <div className={`about-marquee-track${reverse ? " reverse" : ""}`}>
+        {loop.map((photo, index) => {
+          const number = offset + (index % items.length) + 1;
+
+          return (
+            <figure
+              className="about-marquee-item"
+              key={`${photo.src}-${index}`}
+              aria-hidden={index >= items.length}
+            >
+              <div className="about-marquee-image">
+                <img
+                  src={photo.src}
+                  alt={`Behind the scenes ${number}`}
+                  loading="lazy"
+                />
+              </div>
+
+              {photo.label && <figcaption>{photo.label}</figcaption>}
+            </figure>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function AboutMarquee() {
-  // Duplikasi foto agar animasi bisa berulang tanpa jeda.
-  const loopPhotos = [...photos, ...photos];
+  const rowTop = photos.slice(0, 10);
+  const rowBottom = photos.slice(10);
 
   return (
     <div className="about-marquee">
@@ -37,29 +70,9 @@ export default function AboutMarquee() {
         <span>BEHIND THE SCENES ✦</span>
       </div>
 
-      <div className="about-marquee-viewport">
-        <div className="about-marquee-track">
-          {loopPhotos.map((photo, index) => (
-            <figure
-              className="about-marquee-item"
-              key={`${photo.src}-${index}`}
-              aria-hidden={index >= photos.length}
-            >
-              <div className="about-marquee-image">
-                <img
-                  src={photo.src}
-                  alt={`Behind the scenes ${((index % photos.length) + 1)}`}
-                  loading="lazy"
-                />
-                <span className="about-marquee-number">
-                  {String((index % photos.length) + 1).padStart(2, "0")}
-                </span>
-              </div>
-
-              {photo.label && <figcaption>{photo.label}</figcaption>}
-            </figure>
-          ))}
-        </div>
+      <div className="about-marquee-rows">
+        <MarqueeRow items={rowTop} />
+        <MarqueeRow items={rowBottom} offset={rowTop.length} reverse />
       </div>
     </div>
   );

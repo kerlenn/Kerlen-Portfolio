@@ -3,6 +3,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { assetPath } from "@/lib/assetPath";
 
 export default function ProjectCarousel({ project }) {
   const [active, setActive] = useState(0);
@@ -75,14 +76,7 @@ export default function ProjectCarousel({ project }) {
     dragStart.current = null;
   }
 
-  const basePath = "/Kerlen-Portfolio";
-
-  function getImagePath(path) {
-    if (!path) return path;
-    if (/^https?:\/\//i.test(path)) return path;
-
-    return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
-  }
+  const getImagePath = assetPath;
 
   return (
     <>
@@ -125,11 +119,12 @@ export default function ProjectCarousel({ project }) {
                       const card = img.closest(".carousel-card");
 
                       if (card) {
-                        card.style.setProperty(
-                          "--image-ratio",
-                          `${img.naturalWidth} / ${img.naturalHeight}`
-                        );
-                      }
+                         card.style.setProperty(
+                           "--image-ratio",
+                           `${img.naturalWidth} / ${img.naturalHeight}`
+                         );
+                        card.style.setProperty("--r", img.naturalWidth / img.naturalHeight);
+                       }
                     }}
                     onError={(event) => {
                       event.currentTarget.style.display = "none";

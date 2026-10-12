@@ -7,6 +7,7 @@ import Reveal from "@/components/Reveal";
 import StarField from "@/components/StarField";
 import { assetPath } from "@/lib/assetPath";
 import { projects } from "@/data/projects";
+import { FaEnvelope, FaWhatsapp, FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa6";
 
 const skills = ["Python", "TensorFlow", "PyTorch", "scikit-learn", "Pandas", "SQL", "JavaScript", "Next.js", "Git"];
 
@@ -21,7 +22,6 @@ export default function Page() {
     <>
       {/* HOME */}
       <section id="home" className="hero">
-        <StarField />
 
         <div className="hero-grid" />
         <div className="hero-orbit hero-orbit-1" />
@@ -419,6 +419,7 @@ export default function Page() {
                 href="mailto:kerlenninamae@gmail.com"
                 className="contact-link"
               >
+                <span className="contact-link-icon"><FaEnvelope /></span>
 
                 <div>
                   <span className="contact-link-label">
@@ -440,6 +441,7 @@ export default function Page() {
                 href="https://wa.me/+62895323484455"
                 className="contact-link"
               >
+                <span className="contact-link-icon"><FaWhatsapp /></span>
 
                 <div>
                   <span className="contact-link-label">
@@ -463,6 +465,7 @@ export default function Page() {
                 rel="noreferrer"
                 className="contact-link"
               >
+                <span className="contact-link-icon"><FaInstagram /></span>
 
                 <div>
                   <span className="contact-link-label">
@@ -485,6 +488,7 @@ export default function Page() {
                 href="https://www.linkedin.com/in/kerlennina/"
                 className="contact-link"
               >
+                <span className="contact-link-icon"><FaLinkedinIn /></span>
 
                 <div>
                   <span className="contact-link-label">
@@ -506,6 +510,7 @@ export default function Page() {
                 href="https://github.com/kerlenn"
                 className="contact-link"
               >
+                <span className="contact-link-icon"><FaGithub /></span>
 
                 <div>
                   <span className="contact-link-label">

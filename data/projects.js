@@ -160,17 +160,17 @@ export const projects = [
       {
         title: "LaporDong",
         image: "/images/projects/software/3.png",
-        website: "",
+        website: "https://github.com/kerlenn/LaporDong",
       },
       {
         title: "Sleepyani?",
         image: "/images/projects/software/4.png",
-        website: "",
+        website: "https://sleepyani.vercel.app/pages/login.html",
       },
       {
         title: "SkillUp",
         image: "/images/projects/software/5.png",
-        website: "",
+        website: "https://skillup-delta-rose.vercel.app/",
       },
     ],
   },
