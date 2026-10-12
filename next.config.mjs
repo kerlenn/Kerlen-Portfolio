@@ -1,3 +1,4 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
@@ -5,4 +6,5 @@ const nextConfig = {
   images: { unoptimized: true },
   basePath: process.env.BASE_PATH || "",
 };
+
 export default nextConfig;

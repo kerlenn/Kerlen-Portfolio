@@ -75,6 +75,13 @@ export default function ProjectCarousel({ project }) {
     dragStart.current = null;
   }
 
+  const basePath = "/Kerlen-Portfolio";
+
+  function getImagePath(path) {
+    if (!path || /^https?:\/\//i.test(path)) return path;
+    return `${basePath}${path}`;
+  }
+
   return (
     <>
       <div className="project-carousel">
@@ -88,6 +95,7 @@ export default function ProjectCarousel({ project }) {
             const position = getPosition(index);
             const isActive = position === 0;
             const media = item.image || item.thumbnail;
+            const mediaSrc = getImagePath(media);
 
             return (
               <article
@@ -99,14 +107,14 @@ export default function ProjectCarousel({ project }) {
               >
                 {media ? (
                   <img
-                    src={media}
+                    src={mediaSrc}
                     alt={item.title}
                     draggable="false"
                     loading="lazy"
                     onClick={(event) => {
                       event.stopPropagation();
                       setPreview({
-                        src: media,
+                        src: mediaSrc,
                         title: item.title,
                       });
                     }}
