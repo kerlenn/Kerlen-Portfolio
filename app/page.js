@@ -1,6 +1,7 @@
 // app/page.js
 
 import ProjectCarousel from "@/components/ProjectCarousel";
+import AboutMarquee from "@/components/AboutMarquee";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import StarField from "@/components/StarField";
@@ -9,9 +10,9 @@ import { projects } from "@/data/projects";
 const skills = ["Python", "TensorFlow", "PyTorch", "scikit-learn", "Pandas", "SQL", "JavaScript", "Next.js", "Git"];
 
 const contacts = [
-  ["Email", "you@email.com", "mailto:you@email.com"],
-  ["GitHub", "github.com/username", "https://github.com/username"],
-  ["LinkedIn", "linkedin.com/in/username", "https://linkedin.com/in/username"],
+  ["Email", "kerlenninamae@email.com", "mailto:you@email.com"],
+  ["GitHub", "github.com/kerlenn", "https://github.com/username"],
+  ["LinkedIn", "linkedin.com/in/kerlennina", "https://linkedin.com/in/username"],
 ];
 
 export default function Page() {
@@ -247,6 +248,7 @@ export default function Page() {
           </Reveal>
 
         </div>
+        <AboutMarquee />
       </section>
 
       {/* PROJECTS */}
@@ -410,7 +412,7 @@ export default function Page() {
                 </p>
 
                 <a
-                  href="mailto:kerlenninamae@gmail.com"
+                  href="kerlenninamae@gmail.com"
                   className="contact-cta"
                 >
                   <span>GET IN TOUCH</span>

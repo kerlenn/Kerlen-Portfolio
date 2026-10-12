@@ -1,3 +1,5 @@
+// components/StarField.js
+
 export default function StarField() {
   const stars = Array.from({ length: 55 }, (_, i) => ({
     left: `${(i * 37) % 100}%`,

@@ -1,3 +1,5 @@
+// data/projects.js
+
 export const projects = [
   {
     id: "social-media",
@@ -10,20 +12,24 @@ export const projects = [
 
     items: [
       {
-        title: "Instagram Feed",
-        image: "/images/projects/social-media/feed-01.jpg",
+        title: "Poster Big Data dalam Sektor Pangan",
+        image: "/images/projects/social-media/bigdata.png",
       },
       {
-        title: "Instagram Story",
-        image: "/images/projects/social-media/story-01.jpg",
+        title: "Poster Sleepyani? - Aplikasi Kos-kosan",
+        image: "/images/projects/social-media/sleepyani.png",
       },
       {
-        title: "Promotional Post",
-        image: "/images/projects/social-media/poster-01.jpg",
+        title: "Instgram Feeds - Hari Raya Imlek",
+        image: "/images/projects/social-media/imlek.jpg",
       },
       {
-        title: "Reels Cover",
-        image: "/images/projects/social-media/reels-01.jpg",
+        title: "Instgram Feeds - Kunjungan BEM FTI X BEM FH",
+        image: "/images/projects/social-media/kunjungan.png",
+      },
+      {
+        title: "Instagram Reels Cover - Pelatihan Design Adobe Photoshop",
+        image: "/images/projects/social-media/pelatihan.png",
       },
     ],
   },
@@ -40,15 +46,19 @@ export const projects = [
     items: [
       {
         title: "T-Shirt Design",
-        image: "/images/projects/branding/tshirt-01.jpg",
+        image: "/images/projects/branding/baju.png",
       },
       {
-        title: "Lanyard Design",
-        image: "/images/projects/branding/lanyard-01.jpg",
+        title: "Totebag Design",
+        image: "/images/projects/branding/tas.png",
       },
       {
-        title: "Event Material",
-        image: "/images/projects/branding/event-01.jpg",
+        title: "Pin Welcoming Party",
+        image: "/images/projects/branding/pinwp.png",
+      },
+      {
+        title: "Pin Mini Tournament",
+        image: "/images/projects/branding/pinmintur.png",
       },
     ],
   },
@@ -64,48 +74,27 @@ export const projects = [
 
     items: [
       {
-        title: "Book Layout",
-        image: "/images/projects/layout/book-01.jpg",
+        title: "Example 1 : Grade 2 Catholic Religious Education Textbook",
+        image: "/images/projects/layout/layout1.png",
       },
       {
-        title: "Page Redesign",
-        image: "/images/projects/layout/page-01.jpg",
+        title: "Example 2 : Grade 2 Catholic Religious Education Textboo",
+        image: "/images/projects/layout/layout2.png",
       },
       {
-        title: "Publication Layout",
-        image: "/images/projects/layout/publication-01.jpg",
-      },
-    ],
-  },
-
-  {
-    id: "livestream",
-    number: "04",
-    category: "LIVESTREAM HOSTING",
-    title: "LiveStream Hosting",
-    description:
-      "Live streamer and co-host for high-traffic TikTok sales events, focusing on audience engagement, storytelling, and interactive product presentations.",
-    tools: ["Live Streaming", "Public Speaking"],
-
-    items: [
-      {
-        title: "Live Event",
-        image: "/images/projects/livestream/live-01.jpg",
+        title: "Example 1 : Grade 5 Catholic Religious Education Textboo",
+        image: "/images/projects/layout/layout3.png",
       },
       {
-        title: "Product Presentation",
-        image: "/images/projects/livestream/live-02.jpg",
-      },
-      {
-        title: "Co-Hosting",
-        image: "/images/projects/livestream/live-03.jpg",
+        title: "Example 2 : Grade 5 Catholic Religious Education Textboo",
+        image: "/images/projects/layout/layout4.png",
       },
     ],
   },
 
   {
     id: "videography",
-    number: "05",
+    number: "04",
     category: "VIDEOGRAPHY",
     title: "Videography",
     description:
@@ -114,23 +103,29 @@ export const projects = [
 
     items: [
       {
-        title: "BEM After Movie",
+        title: "Informatics Exhibition 2026 After Movie",
         type: "youtube",
-        youtube: "",
-        thumbnail: "/images/projects/videography/aftermovie.jpg",
+        youtube: "https://www.youtube.com/watch?v=7dfcrJZ6xeA",
+        thumbnail: "/images/projects/videography/ie.png",
       },
       {
-        title: "Anti-Corruption Video",
+        title: "Welcoming Party 2026 After Movie",
         type: "youtube",
-        youtube: "",
-        thumbnail: "/images/projects/videography/anticorruption.jpg",
+        youtube: "https://youtu.be/UQhXYadahsk?si=CmyhJ30PQ9bfIk7l",
+        thumbnail: "/images/projects/videography/wp.png",
+      },
+      {
+        title: "Anti-Corruption Project Video",
+        type: "youtube",
+        youtube: "https://youtu.be/2gnQGKW3Zr8?si=p4uZ4fBF0wRbq0lY",
+        thumbnail: "/images/projects/videography/humaniora.png",
       },
     ],
   },
 
   {
     id: "uiux",
-    number: "06",
+    number: "05",
     category: "UI/UX DESIGN",
     title: "UI/UX Design",
     description:
@@ -139,41 +134,42 @@ export const projects = [
 
     items: [
       {
-        title: "UI/UX Project 01",
-        image: "/images/projects/uiux/uiux-01.jpg",
-        website: "",
+        title: "StopPinjol",
+        description:"",
+        image: "/images/projects/uiux/1.png",
+        website: "https://www.figma.com/design/HodP2xk6DC3PL8YA5MEGTa/UI-UX?m=auto&t=MtpSNYEuMW7YXzGg-1",
       },
       {
-        title: "UI/UX Project 02",
-        image: "/images/projects/uiux/uiux-02.jpg",
-        website: "",
-      },
-      {
-        title: "UI/UX Project 03",
-        image: "/images/projects/uiux/uiux-03.jpg",
-        website: "",
+        title: "IKotak",
+        image: "/images/projects/uiux/2.png",
+        website: "https://github.com/kerlenn/UAS_MOBPROG",
       },
     ],
   },
 
   {
     id: "software",
-    number: "07",
+    number: "06",
     category: "SOFTWARE ENGINEERING",
     title: "Software Engineering",
     description:
       "Digital solutions and software projects developed through my Informatics Engineering studies.",
-    tools: ["Next.js", "JavaScript", "Node.js"],
+    tools: ["Next.js", "JavaScript", "Node.js", "Laravel"],
 
     items: [
       {
-        title: "Web Project 01",
-        image: "/images/projects/software/web-01.jpg",
+        title: "LaporDong",
+        image: "/images/projects/software/3.png",
         website: "",
       },
       {
-        title: "Web Project 02",
-        image: "/images/projects/software/web-02.jpg",
+        title: "Sleepyani?",
+        image: "/images/projects/software/4.png",
+        website: "",
+      },
+      {
+        title: "SkillUp",
+        image: "/images/projects/software/5.png",
         website: "",
       },
     ],
