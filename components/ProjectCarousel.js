@@ -78,8 +78,10 @@ export default function ProjectCarousel({ project }) {
   const basePath = "/Kerlen-Portfolio";
 
   function getImagePath(path) {
-    if (!path || /^https?:\/\//i.test(path)) return path;
-    return `${basePath}${path}`;
+    if (!path) return path;
+    if (/^https?:\/\//i.test(path)) return path;
+
+    return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
   }
 
   return (

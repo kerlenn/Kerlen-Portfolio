@@ -1,67 +1,30 @@
-// components/AboutMarquee.js
+
+const basePath = "/Kerlen-Portfolio";
 
 const photos = [
-  {
-    src: "/images/about/1.JPG",
-  },
-  {
-    src: "/images/about/2.JPG",
-  },
-  {
-    src: "/images/about/3.JPG",
-  },
-  {
-    src: "/images/about/4.JPG",
-  },
-  {
-    src: "/images/about/5.JPG",
-  },
-  {
-    src: "/images/about/6.JPG",
-  },
-  {
-    src: "/images/about/7.jpg",
-  },
-  {
-    src: "/images/about/8.JPG",
-  },
-  {
-    src: "/images/about/9.JPG",
-  },
-  {
-    src: "/images/about/10.JPG",
-  },
-  {
-    src: "/images/about/11.JPG",
-  },
-  {
-    src: "/images/about/12.png",
-  },
-  {
-    src: "/images/about/13.jpeg",
-  },
-  {
-    src: "/images/about/14.JPG",
-  },
-  {
-    src: "/images/about/15.JPG",
-  },
-  {
-    src: "/images/about/16.JPG",
-  },
-  {
-    src: "/images/about/17.JPG",
-  },
-  {
-    src: "/images/about/18.jpg",
-  },
-  {
-    src: "/images/about/19.jpg",
-  },
-  {
-    src: "/images/about/20.jpeg",
-  }
-];
+  "1.JPG",
+  "2.JPG",
+  "3.JPG",
+  "4.JPG",
+  "5.JPG",
+  "6.JPG",
+  "7.jpg",
+  "8.JPG",
+  "9.JPG",
+  "10.JPG",
+  "11.JPG",
+  "12.png",
+  "13.jpeg",
+  "14.JPG",
+  "15.JPG",
+  "16.JPG",
+  "17.JPG",
+  "18.jpg",
+  "19.jpg",
+  "20.jpeg",
+].map((filename) => ({
+  src: `${basePath}/images/about/${filename}`,
+}));
 
 export default function AboutMarquee() {
   // Duplikasi foto agar animasi bisa berulang tanpa jeda.
@@ -83,13 +46,17 @@ export default function AboutMarquee() {
               aria-hidden={index >= photos.length}
             >
               <div className="about-marquee-image">
-                <img src={photo.src} alt={photo.alt} loading="lazy" />
+                <img
+                  src={photo.src}
+                  alt={`Behind the scenes ${((index % photos.length) + 1)}`}
+                  loading="lazy"
+                />
                 <span className="about-marquee-number">
                   {String((index % photos.length) + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              <figcaption>{photo.label}</figcaption>
+              {photo.label && <figcaption>{photo.label}</figcaption>}
             </figure>
           ))}
         </div>
