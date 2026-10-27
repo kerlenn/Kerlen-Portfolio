@@ -49,8 +49,7 @@ export default function Page() {
             </h1>
 
             <p className="hero-description hero-in d4">
-              Informatics Engineering student exploring the intersection
-              of technology, creative design, and digital experiences.
+              Informatics Engineering student focused on full-stack software development and data analytics, transforming raw data into actionable insights and scalable applications.
             </p>
 
             <div className="hero-actions hero-in d4">
@@ -128,17 +127,7 @@ export default function Page() {
                 </h2>
 
                 <p className="about-description">
-                  I'm an Informatics Engineering student at
-                  Tarumanagara University with a passion for
-                  merging technology and creative design.
-                </p>
-
-                <p className="about-description">
-                  Through my experience in media production,
-                  graphic design, UI/UX, and public speaking,
-                  I've learned to see technology not only as a
-                  tool, but also as a medium for creating meaningful
-                  digital experiences.
+                  I am an Informatics Engineering student at Tarumanagara University with a strong focus on Software Engineering and Data Analytics. I combine technical precision in building responsive web applications with data-driven insights to create efficient, high-performing digital solutions. Driven by a problem-solving mindset and strong analytical skills, I bridge software engineering with user-centric functionality to turn complex data into actionable tech products.
                 </p>
 
               </div>
@@ -180,58 +169,27 @@ export default function Page() {
 
                 <div className="focus-item">
                   <span>01</span>
-                  <h3>Technology</h3>
+                  <h3>Software Engineering</h3>
                   <p>
-                    Software, data, and digital solutions.
+                    Building scalable web applications and robust system architectures.
                   </p>
                 </div>
 
                 <div className="focus-item">
                   <span>02</span>
-                  <h3>Creative Design</h3>
+                  <h3>Data Analytics</h3>
                   <p>
-                    Visual design, UI/UX, and digital content.
+                    Extracting insights, data processing, and predictive modeling.
                   </p>
                 </div>
 
                 <div className="focus-item">
                   <span>03</span>
-                  <h3>Digital Experiences</h3>
+                  <h3>Machine Learning & AI</h3>
                   <p>
-                    Creating experiences where technology
-                    meets creativity.
+                    Developing intelligent algorithms and real-world AI applications.
                   </p>
                 </div>
-
-              </div>
-
-            </div>
-          </Reveal>
-
-
-          {/* WHERE I'M HEADING */}
-          <Reveal delay={200}>
-            <div className="about-direction">
-
-              <div className="direction-number">
-
-              </div>
-
-              <div className="direction-content">
-
-                <span>WHERE I'M HEADING</span>
-
-                <h2>
-                  Bridging technology
-                  <br />
-                  <span>and creative design.</span>
-                </h2>
-
-                <p>
-                  My goal is to grow as a versatile professional
-                  who creates meaningful digital experiences,
-                  engaging visuals, and intuitive user interfaces.
-                </p>
 
               </div>
 
@@ -256,27 +214,21 @@ export default function Page() {
           </Reveal>
 
 
+
           <Reveal>
             <div className="projects-heading">
-
               <div>
                 <p className="projects-kicker">
                   CREATIVE + DIGITAL WORK
                 </p>
 
                 <h2>
-                  Things I've
-                  <span> created.</span>
+                  Things I've <span>created.</span>
                 </h2>
               </div>
-
-              <p className="projects-intro">
-                A collection of visual designs, media projects,
-                interfaces, and digital experiences I've worked on.
-              </p>
-
             </div>
           </Reveal>
+
 
 
           <div className="projects-list">
@@ -319,13 +271,23 @@ export default function Page() {
                         {project.description}
                       </p>
 
+
                       <div className="project-tools">
                         {project.tools.map((tool) => (
-                          <span key={tool}>
-                            {tool}
+                          <span
+                            className="project-tool-icon"
+                            key={tool.name}
+                            title={tool.name}
+                          >
+                            <img
+                              src={assetPath(tool.image)}
+                              alt={tool.name}
+                              loading="lazy"
+                            />
                           </span>
                         ))}
                       </div>
+
 
                     </div>
 
@@ -348,6 +310,7 @@ export default function Page() {
 
       </section>
 
+
       {/* CONTACT */}
       <section id="contact" className="contact-section">
 
@@ -357,7 +320,6 @@ export default function Page() {
         <div className="container">
 
           {/* SECTION LABEL */}
-
           <Reveal>
             <div className="section-label contact-label">
               <span>04</span>
@@ -366,15 +328,12 @@ export default function Page() {
             </div>
           </Reveal>
 
-
-          {/* MAIN CONTACT */}
-
+          {/* TWO-COLUMN CONTACT */}
           <div className="contact-main">
 
+            {/* LEFT: HEADING */}
             <Reveal direction="left">
-
               <div className="contact-heading">
-
                 <p className="contact-kicker">
                   HAVE A PROJECT IN MIND?
                 </p>
@@ -386,177 +345,106 @@ export default function Page() {
                   <br />
                   <span>meaningful.</span>
                 </h2>
-
               </div>
-
             </Reveal>
 
-
+            {/* RIGHT: CONTACT LINKS */}
             <Reveal direction="right" delay={150}>
+              <div className="contact-links">
 
-              <div className="contact-intro">
+                <a
+                  href="mailto:kerlenninamae@gmail.com"
+                  className="contact-link"
+                >
+                  <span className="contact-link-icon">
+                    <FaEnvelope />
+                  </span>
+                  <div>
+                    <span className="contact-link-label">EMAIL</span>
+                    <span className="contact-link-value">
+                      kerlenninamae@gmail.com
+                    </span>
+                  </div>
+                  <span className="contact-link-arrow">↗</span>
+                </a>
 
-                <p>
-                  I'm always open to new opportunities,
-                  collaborations, and creative projects where
-                  technology meets design.
-                </p>
+                <a
+                  href="https://wa.me/62895323484455"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-link"
+                >
+                  <span className="contact-link-icon">
+                    <FaWhatsapp />
+                  </span>
+                  <div>
+                    <span className="contact-link-label">WHATSAPP</span>
+                    <span className="contact-link-value">
+                      +62 895-3234-84455
+                    </span>
+                  </div>
+                  <span className="contact-link-arrow">↗</span>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/kerlen.nina"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-link"
+                >
+                  <span className="contact-link-icon">
+                    <FaInstagram />
+                  </span>
+                  <div>
+                    <span className="contact-link-label">INSTAGRAM</span>
+                    <span className="contact-link-value">
+                      @kerlen.nina
+                    </span>
+                  </div>
+                  <span className="contact-link-arrow">↗</span>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/kerlennina/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-link"
+                >
+                  <span className="contact-link-icon">
+                    <FaLinkedinIn />
+                  </span>
+                  <div>
+                    <span className="contact-link-label">LINKEDIN</span>
+                    <span className="contact-link-value">
+                      kerlennina
+                    </span>
+                  </div>
+                  <span className="contact-link-arrow">↗</span>
+                </a>
+
+                <a
+                  href="https://github.com/kerlenn"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-link"
+                >
+                  <span className="contact-link-icon">
+                    <FaGithub />
+                  </span>
+                  <div>
+                    <span className="contact-link-label">GITHUB</span>
+                    <span className="contact-link-value">
+                      kerlenn
+                    </span>
+                  </div>
+                  <span className="contact-link-arrow">↗</span>
+                </a>
 
               </div>
-
             </Reveal>
 
           </div>
-
-
-          {/* CONTACT INFORMATION */}
-
-          <Reveal delay={200}>
-
-            <div className="contact-links">
-
-              <a
-                href="mailto:kerlenninamae@gmail.com"
-                className="contact-link"
-              >
-                <span className="contact-link-icon"><FaEnvelope /></span>
-
-                <div>
-                  <span className="contact-link-label">
-                    EMAIL
-                  </span>
-
-                  <span className="contact-link-value">
-                    kerlenninamae@gmail.com
-                  </span>
-                </div>
-
-                <span className="contact-link-arrow">
-                  ↗
-                </span>
-
-              </a>
-
-              <a
-                href="https://wa.me/+62895323484455"
-                className="contact-link"
-              >
-                <span className="contact-link-icon"><FaWhatsapp /></span>
-
-                <div>
-                  <span className="contact-link-label">
-                    WHATSAPP
-                  </span>
-
-                  <span className="contact-link-value">
-                    +62 895-3234-84455
-                  </span>
-                </div>
-
-                <span className="contact-link-arrow">
-                  ↗
-                </span>
-
-              </a>
-
-              <a
-                href="https://www.instagram.com/kerlen.nina"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-link"
-              >
-                <span className="contact-link-icon"><FaInstagram /></span>
-
-                <div>
-                  <span className="contact-link-label">
-                    INSTAGRAM
-                  </span>
-
-                  <span className="contact-link-value">
-                    @kerlen.nina
-                  </span>
-                </div>
-
-                <span className="contact-link-arrow">
-                  ↗
-                </span>
-
-              </a>
-
-
-              <a
-                href="https://www.linkedin.com/in/kerlennina/"
-                className="contact-link"
-              >
-                <span className="contact-link-icon"><FaLinkedinIn /></span>
-
-                <div>
-                  <span className="contact-link-label">
-                    LINKEDIN
-                  </span>
-
-                  <span className="contact-link-value">
-                    kerlennina
-                  </span>
-                </div>
-
-                <span className="contact-link-arrow">
-                  ↗
-                </span>
-
-              </a>
-
-              <a
-                href="https://github.com/kerlenn"
-                className="contact-link"
-              >
-                <span className="contact-link-icon"><FaGithub /></span>
-
-                <div>
-                  <span className="contact-link-label">
-                    GITHUB
-                  </span>
-
-                  <span className="contact-link-value">
-                    kerlenn
-                  </span>
-                </div>
-
-                <span className="contact-link-arrow">
-                  ↗
-                </span>
-
-              </a>
-
-            </div>
-
-          </Reveal>
-
-
-          {/* BOTTOM */}
-
-          <Reveal delay={300}>
-
-            <div className="contact-bottom">
-
-              <span>
-                KERLEN NINA MAE
-              </span>
-
-              <span>
-                CREATIVE TECHNOLOGIST
-              </span>
-
-              <span>
-                © {new Date().getFullYear()}
-              </span>
-
-            </div>
-
-          </Reveal>
-
         </div>
-
       </section>
     </>
   );
