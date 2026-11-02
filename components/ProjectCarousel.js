@@ -5,7 +5,7 @@
 import { useEffect, useRef, useState } from "react";
 import { assetPath } from "@/lib/assetPath";
 
-export default function ProjectCarousel({ project }) {
+export default function ProjectCarousel({ project, onProjectSelect, }) {
   const [active, setActive] = useState(0);
   const [preview, setPreview] = useState(null);
   const dragStart = useRef(null);
@@ -98,8 +98,39 @@ export default function ProjectCarousel({ project }) {
                 key={`${project.id}-${item.title}-${index}`}
                 className={`carousel-card ${isActive ? "active" : ""}`}
                 style={{ "--position": position }}
-                onClick={() => setActive(index)}
+                onClick={() => {
+                  console.log("Project ID:", project.id);
+                  console.log("Project selected:", item.title);
+
+                  setActive(index);
+
+                  if (project.id === "software" || project.id === "uiux") {
+                    onProjectSelect?.({
+                      ...item,
+                      category: project.title,
+                    });
+                  }
+                }}
                 aria-label={`${item.title}, karya ${index + 1}`}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+
+                    setActive(index);
+
+                    if (
+                      ["software", "uiux"].includes(project.id) &&
+                      onProjectSelect
+                    ) {
+                      onProjectSelect({
+                        ...item,
+                        category: project.title,
+                      });
+                    }
+                  }
+                }}
               >
                 {media ? (
                   <img
@@ -109,6 +140,15 @@ export default function ProjectCarousel({ project }) {
                     loading="lazy"
                     onClick={(event) => {
                       event.stopPropagation();
+
+                      if (["software", "uiux"].includes(project.id)) {
+                        onProjectSelect?.({
+                          ...items[index],
+                          category: project.title,
+                        });
+                        return;
+                      }
+
                       setPreview({
                         src: mediaSrc,
                         title: item.title,
@@ -119,12 +159,12 @@ export default function ProjectCarousel({ project }) {
                       const card = img.closest(".carousel-card");
 
                       if (card) {
-                         card.style.setProperty(
-                           "--image-ratio",
-                           `${img.naturalWidth} / ${img.naturalHeight}`
-                         );
+                        card.style.setProperty(
+                          "--image-ratio",
+                          `${img.naturalWidth} / ${img.naturalHeight}`
+                        );
                         card.style.setProperty("--r", img.naturalWidth / img.naturalHeight);
-                       }
+                      }
                     }}
                     onError={(event) => {
                       event.currentTarget.style.display = "none";
@@ -138,7 +178,6 @@ export default function ProjectCarousel({ project }) {
                 <div
                   className={`carousel-placeholder ${media ? "" : "visible"}`}
                 >
-                  <span>{project.category}</span>
                   <strong>{item.title}</strong>
                   <small>Preview coming soon</small>
                 </div>

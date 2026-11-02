@@ -1,5 +1,6 @@
 // app/page.js
 
+"use client"
 import ProjectCarousel from "@/components/ProjectCarousel";
 import AboutMarquee from "@/components/AboutMarquee";
 import Image from "next/image";
@@ -8,6 +9,8 @@ import StarField from "@/components/StarField";
 import { assetPath } from "@/lib/assetPath";
 import { projects } from "@/data/projects";
 import { FaEnvelope, FaWhatsapp, FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa6";
+import { useState } from "react";
+import ProjectDetailModal from "@/components/ProjectDetailModal";
 
 const skills = ["Python", "TensorFlow", "PyTorch", "scikit-learn", "Pandas", "SQL", "JavaScript", "Next.js", "Git"];
 
@@ -18,6 +21,7 @@ const contacts = [
 ];
 
 export default function Page() {
+  const [selectedProject, setSelectedProject] = useState(null);
   return (
     <>
       {/* HOME */}
@@ -49,7 +53,13 @@ export default function Page() {
             </h1>
 
             <p className="hero-description hero-in d4">
-              Informatics Engineering student focused on full-stack software development and data analytics, transforming raw data into actionable insights and scalable applications.
+              Informatics Engineering student exploring the world of
+              <span className="hero-highlight"> Data Analytics </span>
+              and
+              <span className="hero-highlight hero-highlight-alt"> Software Development </span>
+              <span className="hero-description-sub">
+                Turning raw data into actionable insights and building scalable applications.
+              </span>
             </p>
 
             <div className="hero-actions hero-in d4">
@@ -127,7 +137,7 @@ export default function Page() {
                 </h2>
 
                 <p className="about-description">
-                  I am an Informatics Engineering student at Tarumanagara University with a strong focus on Software Engineering and Data Analytics. I combine technical precision in building responsive web applications with data-driven insights to create efficient, high-performing digital solutions. Driven by a problem-solving mindset and strong analytical skills, I bridge software engineering with user-centric functionality to turn complex data into actionable tech products.
+                  I am an <u>Informatics Engineering</u> student at Tarumanagara University with a strong focus on <u>Software Engineering and Data Analytics</u>. I combine technical precision in building responsive web applications with data-driven insights to create efficient, high-performing digital solutions. Driven by a problem-solving mindset and strong <i>analytical skills</i>, I bridge <i>software engineering</i> with user-centric functionality to turn complex data into actionable tech products.
                 </p>
 
               </div>
@@ -242,23 +252,6 @@ export default function Page() {
 
                 <article className="project-category">
 
-                  <div className="project-category-header">
-
-                    <div>
-                      <span className="project-category-number">
-                        {project.number}
-                      </span>
-
-                      <span className="project-category-name">
-                        {project.category}
-                      </span>
-                    </div>
-
-                    <div className="project-category-line" />
-
-                  </div>
-
-
                   <div className="project-category-content">
 
                     <div className="project-category-info">
@@ -294,6 +287,7 @@ export default function Page() {
 
                     <ProjectCarousel
                       project={project}
+                      onProjectSelect={setSelectedProject}
                     />
 
                   </div>
@@ -446,6 +440,10 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <ProjectDetailModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </>
   );
 }

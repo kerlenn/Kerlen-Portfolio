@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 
 const LINES = [
-  "Sistem online. Halo, penjelajah!",
-  "Scroll terus buat scan semua proyek.",
-  "Compiling ide... 100% selesai.",
-  "Kontak ada di node terakhir. Connect yuk!",
-  "git commit -m 'siap petualangan'",
+  "System online! Hey, glad you're here. Looking for a fresh perspective or an intern? Let's chat!",
+  "Keep scrolling to check out what I've built.",
+  "Processing ideas... 100% inspired and ready to contribute.",
+  "Found something you like? Let's connect and build something cool together.",
+  "git commit -m 'ready for an internship adventure!",
 ];
 const GLYPHS = ["0", "1", "{ }", "</>", "01", "AI", "//", "=>", "[ ]", "10"];
 const SPARKS = ["0", "1", "<>", "{}", "+"];
